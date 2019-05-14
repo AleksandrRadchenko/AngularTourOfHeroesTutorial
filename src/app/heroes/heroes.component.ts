@@ -24,7 +24,7 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     const start = Date.now();
-    this.delay(4000)
+    this.delay(1000)
       .then(() => {
         this.heroService
         .getHeroes()
