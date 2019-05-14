@@ -14,10 +14,8 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    const start = Date.now();
     console.log('heroes initialized');
     this.getHeroes();
-    console.log('read list of heroes. Elapsed: ', Date.now() - start);
   }
 
   onSelect(hero: Hero): void {
@@ -25,6 +23,17 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    const start = Date.now();
+    this.delay(4000)
+      .then(() => {
+        this.heroService
+        .getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
+        console.log('read list of heroes. Elapsed: ', Date.now() - start);
+      });
+  }
+
+  async delay(ms: number) {
+    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => {});
   }
 }
