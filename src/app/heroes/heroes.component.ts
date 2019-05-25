@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -11,10 +12,11 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
   selectedHero: Hero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService,
+              private messageService: MessageService) { }
 
   ngOnInit() {
-    console.log('HeroesComponent: initialized');
+    this.messageService.add('HeroesComponent: initialized');
     this.getHeroes();
   }
 
@@ -23,13 +25,14 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
+    this.messageService.add('HeroesComponent: start fetching heroes');
     const start = Date.now();
     this.delay(1000)
       .then(() => {
         this.heroService
         .getHeroes()
         .subscribe(heroes => this.heroes = heroes);
-        console.log('HeroesComponent: fetched list of heroes. Elapsed', Date.now() - start, 'ms');
+        this.messageService.add('HeroesComponent: fetched list of heroes. Elapsed ' + (Date.now() - start) + ' ms');
       });
   }
 
