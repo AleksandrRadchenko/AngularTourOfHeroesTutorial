@@ -5,6 +5,7 @@
 </nav>
 <app-messages></app-messages>
 <router-outlet></router-outlet>
+<app-inner (valueChange)='displayCounter($event)'></app-inner>
 
 <hr/>
 <app-unless-directive-test></app-unless-directive-test>

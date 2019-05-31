@@ -15,4 +15,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.messageService.add('AppComponent: initialized');
   }
+
+  displayCounter(count: any) {
+    console.log(count);
+  }
 }
