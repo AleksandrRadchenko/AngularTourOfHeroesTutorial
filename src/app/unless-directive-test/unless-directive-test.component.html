@@ -1,0 +1,9 @@
+<h2>Test custom directive creation: <strong>Unless</strong> directive</h2>
+<p>
+  The condition is currently <span>{{condition}}</span>.
+  <button
+    (click)="condition = !condition">
+    Toggle condition to {{condition ? 'false' : 'true'}}
+  </button>
+</p>
+<p *appUnless="condition">Show this sentence unless the condition is true.</p>
