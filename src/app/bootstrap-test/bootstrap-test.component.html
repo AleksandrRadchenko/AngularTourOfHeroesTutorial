@@ -1,0 +1,32 @@
+<div class="container">
+  <button class="btn btn-warning" (click)="close()">Warning</button>
+  <div class="well hidden-sm hidden-md hidden-lg">
+    <p>Screen &lt; 768px</p>
+  </div>
+  <div class="well hidden-md hidden-lg">
+    <p>Screen &gt; 768px and &lt; 992px</p>
+  </div>
+  <div class="well hidden-lg">
+    <p>Screen &gt; 992px and &lt; 1200px</p>
+  </div>
+  <div class="well">
+    <p>Screen &gt; 1200px</p>
+  </div>
+</div>
+<div class="containter">
+  <div class="row">
+    <div class="col-sm-6">
+      <div *ngIf="!hidden" class="card">
+        <div class="card-block">
+          <button type="button" class="close" (click)="close()">
+            &times;
+          </button>
+          <h3 class="card-title">Special title treatment</h3>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="bs" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

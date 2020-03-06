@@ -8,6 +8,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 import { UnlessDirectiveTestComponent } from './unless-directive-test/unless-directive-test.component';
 import { UnlessDirective } from './directives/unless.directive';
 
@@ -18,6 +19,7 @@ import { UnlessDirective } from './directives/unless.directive';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    BootstrapTestComponent,
     UnlessDirectiveTestComponent,
     UnlessDirective
   ],
